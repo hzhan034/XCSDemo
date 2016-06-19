@@ -19,10 +19,10 @@ package com.hugo.annotationprocessortest;
 /**
  * @author Hannes Dorfmann
  */
-@Factory(
-    id = "NormalPizza",
-    type = Meal.class
-)
+//@Factory(
+//    id = "NormalPizza",
+//    type = Meal.class
+//)
 public class NormalPizza implements Meal {
 
   @Override public float getPrice() {

@@ -6,12 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.support.v4.app.Fragment;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private MealFactory factory;
+//    private MealFactory factory;
 
     private Button orderBtn;
     private TextView priceTxt;
@@ -26,7 +27,30 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
 
-        factory = new MealFactory();
+
+        initFrg();
+
+//        factory = new MealFactory();
+    }
+
+    private void initFrg() {
+
+
+        int id = 123;
+        String title = "test";
+
+//        // Using the generated Builder
+        Fragment fragment =
+                new MyFragmentBuilder(id, title)
+                        .build();
+//
+//
+//        // Fragment Transaction
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
     }
 
     private void initView() {
@@ -38,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Meal meal = factory.create(orderEdit.getText() + "");
-                    priceTxt.setText(meal.getPrice() + "");
+//                    Meal meal = factory.create(orderEdit.getText() + "");
+//                    priceTxt.setText(meal.getPrice() + "");
                 } catch (Exception e) {
 
                 }

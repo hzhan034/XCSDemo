@@ -21,10 +21,10 @@ package com.hugo.annotationprocessortest;
  * @author Hannes Dorfmann
  */
 
-@Factory(
-        id = "SmallPizza",
-        type = Meal.class
-)
+//@Factory(
+//        id = "SmallPizza",
+//        type = Meal.class
+//)
 public class SmallPizza implements Meal {
 
     @Override
